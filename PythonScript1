@@ -1,0 +1,2 @@
+info = {}
+Number_of_Currencies = int(input("Enter the Amount of Currencies: ")
