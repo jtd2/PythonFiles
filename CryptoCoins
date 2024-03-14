@@ -1,0 +1,24 @@
+info = {}
+Number_of_Currencies = int(input("Enter the Amount of Currencies: "))
+
+for N_o_C in range(Number_of_Currencies):
+  if N_o_C < Number_of_Currencies:
+    coin = input("Enter the name of the coin: ")
+    tokens = float(input(f"Enter Dollar Amount purchased: "))
+    BP = float(input(f"Enter {coin.title()} price when purchased: "))
+    BP_date = input("Enter date of buying price: ")
+    SP = float(input(f"Enter {coin.title()} price when sold: "))
+    SP_date = input("Enter date of selling price: ")
+    if SP>BP:
+      Percent_Increase = format(tokens*(1+((SP-BP)/BP)), ".2f")
+    else:
+      Percent_Increase = format(tokens*((SP-BP)/BP), ".2f")
+    BPandSP = (tokens, BP, BP_date, SP, SP_date, Percent_Increase)
+    info[coin] = BPandSP
+    N_o_C += 1
+    if N_o_C == Number_of_Currencies:
+      break
+
+for token, etAL in info.items():
+  print(f"You bought ${etAL[0]} of {token.title()} on {etAL[2]} at ${etAL[1]}.")
+  print(f"You sold {token.title()} on {etAL[4]} for ${etAL[5]}") 
